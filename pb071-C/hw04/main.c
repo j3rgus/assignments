@@ -1,0 +1,72 @@
+#include "maze.h"
+
+int main(int argc, char *argv[])
+{
+    FILE *fr;
+    ALLEGRO_BITMAP *bmp = NULL;
+    ALLEGRO_COLOR color;
+    COORDINATE start, goal;
+    MAZE maze;
+    char *output, err = 0;
+
+    if (init())
+        return 1;
+
+    if ((argc < 3) || (argc > 5)) {
+        printf("Usage: ./maze input.txt output.bmp [#COLOR] [-solve]\n");
+        return 1;
+    }
+
+    fr = fopen(argv[1], "r");
+    if (fr == NULL) {
+        perror(argv[1]);
+        return 1;
+    }
+
+    maze.h = 0;
+    maze.w = 0;
+    while (fgets(maze.data[maze.h], MAZE_MAX_LENGTH-1, fr) != NULL) {
+        maze.data[maze.h][strlen(maze.data[maze.h])-1] = 0;
+        maze.w = (strlen(maze.data[maze.h]) > maze.w) ? strlen(maze.data[maze.h]) : maze.w;
+        maze.h++;
+    }
+
+    correct_maze(&maze);
+    
+    bmp = prepare_bitmap(maze.w * TILE_W, maze.h * TILE_H);
+
+    if (argc < 4)
+        color = al_map_rgb(0, 0, 0);
+    else color = get_color(argv[3]);
+
+    draw_maze(&maze, color);
+
+    if (!al_save_bitmap(argv[2] , bmp)) {
+        fprintf(stderr, "Failed while writting output picture %s\n", argv[2]);
+        err = 1;
+    }
+
+    if ((argc == 5) && !strcmp(argv[4], "-solve")) {
+        if (!get_ends(&maze, &start, &goal)) {
+            fprintf(stderr, "Can't determine ends of maze\n");
+        }
+        if (!find_path(&maze, start, goal)) {
+            fprintf(stderr, "Can't find path\n");
+        }
+        draw_maze(&maze, color);
+        output = (char *) malloc(strlen(argv[2]) + 9 + 1);
+        if (output == NULL)
+            err = 1;
+        if (!al_save_bitmap(strcat(strcpy(output, "solution-"), argv[2]) , bmp)) {
+            fprintf(stderr, "Failed while writting output picture %s\n", output);
+            err = 1;
+        }
+        free(output);
+    }
+
+
+    al_destroy_bitmap(bmp);
+    al_shutdown_image_addon();
+    fclose(fr);
+    return err;
+}

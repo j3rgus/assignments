@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/fi/xlysy_pb173/!svn/ver/3/autotools-uloha1
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/fi/xlysy_pb173/!svn/ver/2/autotools-uloha1/README
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/fi/xlysy_pb173/!svn/ver/3/autotools-uloha1/configure.ac
+END
+hello.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/fi/xlysy_pb173/!svn/ver/2/autotools-uloha1/hello.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/fi/xlysy_pb173/!svn/ver/3/autotools-uloha1/Makefile.am
+END

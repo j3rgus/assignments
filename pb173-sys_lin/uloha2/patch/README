@@ -1,0 +1,2 @@
+diff -ur param.c param-copy.c > param.patch
+patch -p0 -i param.patch

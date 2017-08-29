@@ -1,0 +1,3 @@
+Pre coding style budem pouzivat Linux Kernel Coding Style
+a testovat to s checkpatch skriptom. Kvoli prehladnosti budem
+ignorovat pravidlo pre menej ako 80 znakov na riadok.

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/fi/xlysy_pb173/!svn/ver/8/uloha3/libdebug
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/fi/xlysy_pb173/!svn/ver/8/uloha3/libdebug/debug.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/fi/xlysy_pb173/!svn/ver/7/uloha3/libdebug/Makefile
+END
+libdebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/fi/xlysy_pb173/!svn/ver/7/uloha3/libdebug/libdebug.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/fi/xlysy_pb173/!svn/ver/7/uloha3/libdebug/main.c
+END

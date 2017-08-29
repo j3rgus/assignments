@@ -1,0 +1,35 @@
+Ten test, ktory je v studijnych materialoch obsahuje race, ktory nie je osetreny.
+Napr. po spusteny oboch vlakien a po prechode prveho zapisu do front, tam su 3 prvky
+v oboch, tj.
+
+vlakno first					vlakno second
+	q_enqueue(0, 1, NULL);			q_enqueue(1, 3, NULL);
+	q_enqueue(1, 1, NULL);			q_enqueue(1, 4, NULL);
+	q_enqueue(0, 4, NULL);			q_enqueue(0, 2, NULL);
+
+Toto sa vykonalo pararelne.
+
+V tomto momente dokaze vlakno second skoncit bez toho aby prve vlakno vobec manipulovalo s frontami.
+
+vlakno second
+	id = q_dequeue(0, NULL);	//fronta_0 - 2 prvky
+	id = q_dequeue(0, NULL);	//fronta_0 - 1 prvok
+	id = q_dequeue(1, NULL);	//fronta_1 - 2 prvky
+
+	q_enqueue(0, 3, NULL);		//fronta_0 - 2 prvky
+	q_enqueue(1, 6, NULL);		//fronta_1 - 3 prvky
+	q_enqueue(0, 6, NULL);		//fronta_0 - 3 prvky
+
+	id = q_dequeue(1, NULL);	//fronta_1 - 2 prvky
+	id = q_dequeue(1, NULL);	//fronta_1 - 1 prvok
+	id = q_dequeue(0, NULL);	//fronta_0 - 2 prvky
+
+	id = q_dequeue(0, NULL);	//fronta_0 - 1 prvok
+
+vlakno first
+	id = q_dequeue(1, NULL);	//fronta_1 - 0 prvkov
+	id = q_dequeue(1, NULL);	//zasekne sa
+	id = q_dequeue(0, NULL);
+
+Tych pripadov, kde sa to sekne bude zrejme viac. Tento pripad sa mi staval najcastejsie.
+Pri separovani zapisu a citania a pararelnom pristupu do fronty som nemal ziadny problem.

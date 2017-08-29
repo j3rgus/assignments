@@ -1,0 +1,10 @@
+-- Jergus Lysy (374217)
+-- Uloha 7.2
+
+pouzity openssl
+
+pre generator 2
+openssl dhparam -2 -outform DER -out params2.der 1024
+
+pre generator 5
+openssl dhparam -5 -outform DER -out params5.der 1024

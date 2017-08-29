@@ -1,0 +1,14 @@
+Projekt 3
+Jergus Lysy (374217)
+
+Riesenie varianty zadania pre Shadow mapu. Ide o variantu, kde pouzivam FBO, kamera umiestnena na mieste sevetlneho zdroja a v shadery odratavam vzdialenost (Z) a nastavujem tien tam, kde sa to prekryva.
+
+OVLADANIE
+
+ESC - ukonci program
+'c' - prepina medzi statickou kamerou a kamerou svetla
+'f' - fullscreen
+'a' - zvysenie polomeru tocenia kamery
+'z' - znizenie polomeru tocenia kamery
+
+Polomer je nastovovany s 'radius' a defaulte je nastaveny na 30.

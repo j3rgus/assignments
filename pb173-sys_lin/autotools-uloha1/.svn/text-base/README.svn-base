@@ -1,0 +1,8 @@
+Generovanie Makefile pomocou Autotools
+-obsahuje Makefile.am, hello.c
+autoscan -> configure.scan -> configure.ac
+-obsahuje Makefile.am, configure.ac, hello.c
+
+autoreconf -i -> Makefile.in
+./configure -> Makefile
+make

@@ -1,0 +1,6 @@
+# Jergus Lysy (374217)
+# Zadanie 1
+
+openssl sha1 <filename>
+
+# Spocita SHA1(<filename>)

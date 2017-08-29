@@ -1,0 +1,23 @@
+sqlninja pouziva konfiguracny subor, v ktorom specifikuje hosta, teda ciel, port a ine atributy, ktore mozno pouzit na ziskanie kontroli nad SQL databazou.
+Podla vsetkeho funguje iba na ziskanie kontroly nad MS SQL DB, ale test na SQL injection mozem vykonat aj tak.
+
+Na konfiguracny subor potrebujem HTTP request, ktory mozem odchytit napr. s burpsuite. Vyzera nasledovne:
+
+GET /~xkumpost/bis/part3/sql_injection HTTP/1.1
+Host: minotaur.fi.muni.cz:8443
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0 Iceweasel/22.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+Ten som mierne upravil a pridal do konf. suboru (subor som pridal do zlozky).
+So samotnym nastrojom sqlninja pracujem v jednotlivych modoch. Zaujima ma test a preto zapisem prikaz ako (Obr1):
+> sqlninja -v -m test -f sqlninja.conf
+A prikaz pre dalsiu manipulaciu je 
+> sqlninja -v -m fingerprint -f sqlninja.conf
+Mozno ziskat informacie o DB (1), aktualnom uzivateli (2) a pravach (3), prip. ci som sysadmin.
+Taktiez mozem napr. uploadnut script na server cez HTTP (-m upload), resp. binarku pre netcat a ziskat vzdialeny pristup na SQL server na zvolenom porte (mozem pozuit revshell, dirshell,.. zalezi na pristupnosti na server).
+V ramci niektorych verziach DB mozem tiez priamo zistit heslo sa metodou bruteforce, prip. cez wordlist.
+
+Pozn. zaujimave, ze sqlninja to zdetekoval ako MS SQL 2005, pricom podla manualnych testov a sqlmap ide o MySQL >5.0.11.

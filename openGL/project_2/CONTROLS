@@ -1,0 +1,14 @@
+'w' - move forward
+'s' - move backward
+'a' - turn left
+'d' - turn right
+'c' - go down
+space - go up
+
+'l' - turn room light on/off
+'k' - turn 'sun' light on/off
+'j' - turn lamp light on/off
+'m' - turn metronome on/off
+
+'f' - fullscreen
+esc - quit

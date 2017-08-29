@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# 2
+cat /dev/urandom | hexdump -n 8 -v -e '1/1 "%.02x"'
+
+# key generator
+# J. Lysy (374217)

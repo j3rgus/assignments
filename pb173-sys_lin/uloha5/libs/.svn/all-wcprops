@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs/debug.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs/Makefile
+END
+libdebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs/libdebug.c
+END
+pblog.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs/pblog.h
+END
+libpblog.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/fi/xlysy_pb173/!svn/ver/8/uloha5/libs/libpblog.c
+END

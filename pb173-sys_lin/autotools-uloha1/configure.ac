@@ -1,0 +1,32 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.68])
+AC_INIT([myproject], [1.0])
+AC_CONFIG_SRCDIR([hello.c])
+AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE
+AC_ARG_ENABLE([debug],
+[  --enable-debug      build with additional debugging code],
+[USE_DEBUG="$enableval"],[USE_DEBUG="no"]) 
+
+if test $USE_DEBUG = yes; then
+	DEBUG="-g"
+else
+	DEBUG=""
+fi
+
+AC_SUBST([DEBUG])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_OUTPUT([Makefile])

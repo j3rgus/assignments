@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# 1
+sha1sum /etc/passwd
+
+# J. Lysy (374217)
+# Labak sha1 /etc/passwd 26def8d40352ab82c907ca14fb94ae3cbd346d11
+

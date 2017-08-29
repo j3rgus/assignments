@@ -1,0 +1,11 @@
+--- param.c	2014-09-24 14:54:51.043955203 +0200
++++ param-copy.c	2014-09-24 14:57:07.940152984 +0200
+@@ -42,7 +42,7 @@
+ 
+ 	/* do some nice (or faulty?) work */
+ 	printf("Say something: ");
+-	scanf("%s", buffer);
++	scanf("%9s", buffer);
+ 	printf("You said \"%s\"\n", buffer);
+ 
+ 	/* say Good Bye */

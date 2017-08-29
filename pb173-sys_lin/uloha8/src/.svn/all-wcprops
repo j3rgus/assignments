@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/fi/xlysy_pb173/!svn/ver/14/uloha8/src
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/fi/xlysy_pb173/!svn/ver/12/uloha8/src/Makefile
+END
+flock.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/fi/xlysy_pb173/!svn/ver/12/uloha8/src/flock.c
+END
+notify.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/fi/xlysy_pb173/!svn/ver/14/uloha8/src/notify.c
+END
+eject.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/fi/xlysy_pb173/!svn/ver/12/uloha8/src/eject.c
+END

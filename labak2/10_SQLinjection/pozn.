@@ -1,0 +1,8 @@
+Okrem týchto dvoch som vyskúšal ešte jsql, sqlsus a nejaké pre Windows.
+jsql mal problém s https
+sqlsus mi nefungoval na konf. súbore - súbor som upravil podľa komentárov no aj tak nešiel (chybu vyhadzoval už hneď pri union teste na stĺpce).
+pre Windows toho veľa nie je čo by fungovalo aj pre https, takmer všetko čo som našiel potrebovali komerčnú verziu na to, aby som mohol vôbec pracovať s https (napr. Havij SQL Injection). Obecne so zabezpečenym http je to vcelku problém pokiaľ ide o nástroje takéhoto druhu.
+
+Podľa mojho skromného názoru je sqlmap (+ sqlninja) najlepšia voľba (testoval som to ako prvé a nastavilo to látku ceklom vysoko)
+
+Jergus Lysy, 374217
