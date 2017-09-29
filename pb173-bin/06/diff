@@ -1,0 +1,41 @@
+*** default.x	2013-10-31 14:17:58.540162887 +0100
+--- upd.x	2013-10-30 11:03:49.689605384 +0100
+***************
+*** 62,68 ****
+--- 62,70 ----
+    PROVIDE (__etext = .);
+    PROVIDE (_etext = .);
+    PROVIDE (etext = .);
++   start_rodata = .;
+    .rodata         : { *(.rodata .rodata.* .gnu.linkonce.r.*) }
++   end_rodata = .;
+    .rodata1        : { *(.rodata1) }
+    .eh_frame_hdr : { *(.eh_frame_hdr) }
+    .eh_frame       : ONLY_IF_RO { KEEP (*(.eh_frame)) }
+***************
+*** 138,148 ****
+    .got            : { *(.got) *(.igot) }
+    . = DATA_SEGMENT_RELRO_END (12, .);
+    .got.plt        : { *(.got.plt)  *(.igot.plt) }
+!   .data           :
+    {
+      *(.data .data.* .gnu.linkonce.d.*)
+      SORT(CONSTRUCTORS)
+    }
+    .data1          : { *(.data1) }
+    _edata = .; PROVIDE (edata = .);
+    __bss_start = .;
+--- 140,152 ----
+    .got            : { *(.got) *(.igot) }
+    . = DATA_SEGMENT_RELRO_END (12, .);
+    .got.plt        : { *(.got.plt)  *(.igot.plt) }
+!   .data 0x804a040 :
+    {
++     start_data = .;
+      *(.data .data.* .gnu.linkonce.d.*)
+      SORT(CONSTRUCTORS)
+    }
++   end_data = .;
+    .data1          : { *(.data1) }
+    _edata = .; PROVIDE (edata = .);
+    __bss_start = .;
