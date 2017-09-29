@@ -1,0 +1,11 @@
+Homework
+
+* write an example program with an *integer overflow* (2pt)
+* use the overflowing number as an `alloca` parameter
+* this introduces a *stack-based* vulnerability
+* use your knowledge about stack exploits from *first week*
+* provide a file with input that *exploits the vulnerability* (2pt)
+* compile your code without ASLR, stack guard, etc.
+* use return address overwrite in your exploit (2pt)
+* write a text message explaining what you did (~2 pages)
+* also describe how to fix the vulnerability you introduced
